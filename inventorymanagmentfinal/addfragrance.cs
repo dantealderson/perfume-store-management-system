@@ -639,6 +639,8 @@ namespace inventorymanagmentfinal
             fragdgv.ClearSelection();
             costtxtbox.Clear();
             sizecombobox.SelectedIndex = -1;
+            selectedFragranceID = 0;
+
         }
 
         private void addfragrance_Load(object sender, EventArgs e)
