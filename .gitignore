@@ -7,3 +7,6 @@ bin/
 obj/
 **/bin/
 **/obj/
+
+packages/
+**/packages/
