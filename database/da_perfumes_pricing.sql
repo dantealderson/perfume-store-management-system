@@ -1,0 +1,56 @@
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: da_perfumes
+-- ------------------------------------------------------
+-- Server version	8.0.41
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `pricing`
+--
+
+DROP TABLE IF EXISTS `pricing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pricing` (
+  `frag_id` int NOT NULL,
+  `pricing_id` int NOT NULL AUTO_INCREMENT,
+  `size` int NOT NULL,
+  `price` int NOT NULL,
+  PRIMARY KEY (`pricing_id`),
+  KEY `FK_Pricing_FragId` (`frag_id`),
+  CONSTRAINT `FK_Pricing_FragId` FOREIGN KEY (`frag_id`) REFERENCES `fragrance` (`frag_id`) ON DELETE CASCADE,
+  CONSTRAINT `pricing_ibfk_1` FOREIGN KEY (`frag_id`) REFERENCES `fragrance` (`frag_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pricing`
+--
+
+LOCK TABLES `pricing` WRITE;
+/*!40000 ALTER TABLE `pricing` DISABLE KEYS */;
+INSERT INTO `pricing` VALUES (63,169,3,3000),(63,170,5,4000),(63,171,10,7000),(63,172,100,40000),(64,173,3,1),(64,174,5,1),(64,175,10,1),(64,176,50,1),(65,177,3,323),(65,178,5,3),(65,179,10,23),(65,180,100,3),(66,189,3,12),(66,190,5,12),(66,191,10,12),(66,192,200,63000),(67,193,3,12),(67,194,5,12),(67,195,10,12),(67,196,200,20000);
+/*!40000 ALTER TABLE `pricing` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-07-08 15:00:27
